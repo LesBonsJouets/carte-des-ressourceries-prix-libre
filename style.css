@@ -1,4 +1,14 @@
-#map { height: 1080px; }
+#map {
+	height: 1080px; 
+}
+
 .leaflet-popup-content-wrapper {
-	font-size: 1.5em;	
+	font-size: 1.5em;
+}
+
+@media only screen and (max-width: 1000px)
+{ 
+	.leaflet-popup-content-wrapper {
+		font-size: 2.5em;
+	}
 }
