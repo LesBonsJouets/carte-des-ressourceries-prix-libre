@@ -34,7 +34,7 @@ flag.removeChild(flag.firstChild);
 
 var LeafIcon = L.Icon.extend({
     options: {
-        shadowUrl: 'pin-shadow.png',
+        shadowUrl: './img/pin-shadow.png',
         iconSize:     [63, 126],
         shadowSize:   [93, 78],
         iconAnchor:   [31, 125],
@@ -42,7 +42,7 @@ var LeafIcon = L.Icon.extend({
         popupAnchor:  [-3, -76]
     }
 });
-var pinIcon = new LeafIcon({iconUrl: 'pin.png'})
+var pinIcon = new LeafIcon({iconUrl: './img/pin.png'})
 	
 L.icon = function (options) {
     return new L.Icon(options);
