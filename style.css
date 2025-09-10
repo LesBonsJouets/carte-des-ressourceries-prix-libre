@@ -1,1 +1,4 @@
 #map { height: 1080px; }
+.leaflet-popup-content-wrapper {
+	font-size: 1.5em;	
+}
