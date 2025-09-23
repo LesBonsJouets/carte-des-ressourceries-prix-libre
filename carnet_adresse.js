@@ -43,7 +43,7 @@ let adresses = [
 		horaire:["⌀","⌀","⌀","⌀","13h30 - 16h00","10h00 - 18h00","⌀"],
 		telephone:'+33667420969',
 		email:'lesbonsjouets56@gmail.com ',
-		siteweb:'https://www.facebook.com/profile.php?id=100063671133700p',
+		siteweb:'		https://www.facebook.com/people/Association-Les-Bons-Jouets/100063671133700/',
 		siteweb_nom:'page facebook',
 	},
 	{
