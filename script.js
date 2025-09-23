@@ -3,7 +3,7 @@
 document.getElementById("map").style.height = (window.innerHeight + "px");
 
 //LEAFLET CONFIGURATION - init
-var map = L.map('map').setView([47.715800, -2.202265], 13);
+var map = L.map('map').setView([47.68122,-2.20396], 13);
 
 //LEAFLET CONFIGURATION - overlay + layers (OSM + GGL)
 var osm =           L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"),
@@ -35,11 +35,11 @@ flag.removeChild(flag.firstChild);
 var LeafIcon = L.Icon.extend({
     options: {
         shadowUrl: './img/pin-shadow.png',
-        iconSize:     [63, 126],
-        shadowSize:   [93, 78],
-        iconAnchor:   [31, 125],
-        shadowAnchor: [1, 76],
-        popupAnchor:  [-3, -76]
+        iconSize:     [36, 62],
+        shadowSize:   [53, 34],
+        iconAnchor:   [17, 61],
+        shadowAnchor: [0, 32],
+        popupAnchor:  [0, -55]
     }
 });
 var pinIcon = new LeafIcon({iconUrl: './img/pin.png'})
@@ -78,7 +78,7 @@ for( let ressourcerie of adresses)
 
 	L.marker(
 		[ressourcerie.GPS[0],ressourcerie.GPS[1]],
-		{icon: pinIcon}).bindPopup(label).addTo(map);//*/
+		{icon: pinIcon}).bindPopup(label, { maxWidth: 9999, maxHeight: 9999}).addTo(map);//*/
 }
 
 //var layerControl = L.control.layers(null, my_overlays).addTo(map);

@@ -20,7 +20,7 @@ let adresses = [
 		adresse:"5, rue - 99000 Ville",
 		
 		/*Liste des horaires du lundi au dimanche*/
-		horaire:["⌀","⌀","⌀","⌀","⌀","⌀","⌀",],
+		horaire:["⌀","⌀","⌀","⌀","⌀","⌀","⌀"],
 		
 		/*Informations de contact*/
 		telephone:"0123456789",
@@ -36,30 +36,45 @@ let adresses = [
 		/*============FIN EXEMPLE FIN EXEMPLE============*/
 	},
 	{
-		nom:'Les Trésors de l\'Arz',
-		GPS:[47.702242,-2.219249],
-		description_courte:'Récupération et reventes de trésors précieux, historiques et vintage',
-		adresse:"1 bis au fond de l'Arz - 56220 PEILLAC",
-		telephone:"0123456789",
-		email:"spam@example.com",
-		horaire:["⌀","⌀","⌀","⌀","13h30 - 16h00","10h00 - 18h00","⌀",],
+		nom:'Les Bons Jouets',
+		GPS:[47.715734,-2.201997],
+		description_courte:'Jeux, jouets, divertissements',
+		adresse:"7, la Croix de la Route - 56220 PEILLAC",
+		horaire:["⌀","⌀","⌀","⌀","13h30 - 16h00","10h00 - 18h00","⌀"],
+		telephone:'+33667420969',
+		email:'lesbonsjouets56@gmail.com ',
 		siteweb:'https://www.facebook.com/profile.php?id=100063671133700p',
 		siteweb_nom:'page facebook',
 	},
 	{
-		nom:'Les Trésors de l\'Oust',
-		GPS:[47.724801,-2.209121],
-		description_courte:'Récupération et reventes de trésors précieux, historiques et vintage',
-		adresse:"1 bis au fond de l'Oust - 56220 PEILLAC",
-		telephone:"0123456789",
-		email:"spam@example.com",
-		horaire:["23h58 - 23h59","23h58 - 23h59","⌀","23h58 - 23h59","⌀","⌀","06h15 - 03h99",],
-		siteweb:'https://www.facebook.com/profile.php?id=100063671133700p',
+		nom:'Les Meubles de l\'Asso',
+		GPS:[47.703002,-2.226641],
+		description_courte:'Meubles, Art, Livres, Décoration',
+		adresse:"grand hangar à la Bécharderie sur la route de Prameux<br />56220 PEILLAC",
+		horaire:["⌀","⌀","⌀","⌀","09h30 - 12h30","⌀","⌀"],
+		telephone:'+33667420969',
+		siteweb:'https://www.facebook.com/profile.php?id=61572315757572',
 		siteweb_nom:'page facebook',
 	},
 	{
-		GPS:[47.70664,-2.18851],
+		nom:'Demain En Mains',
+		GPS:[47.643443, -2.163582],
+		description_courte:'Ressourcerie',
+		adresse:"330, rue de Brancheleux - 56350 Allaire",
+		horaire:["⌀","⌀","⌀","⌀","⌀","10h00 - 18h00", "⌀"],
+		telephone:'+33646039590',
+		email:'recycleriedem@gmail.com',
+		siteweb:'https://www.facebook.com/profile.php?id=61573835180170',
+		siteweb_nom:'page facebook',
 	},
-
+	{
+		nom:'La Tri-Dimension',
+		GPS:[47.713840, -2.215089],
+		description_courte:'Ressourcerie',
+		adresse:"3, rue Marcel Callo - 56220 PEILLAC",
+		horaire:["⌀","⌀","14h00 - 18h00","⌀","12h00 - 18h00","9h30 - 12h30 & 14h00 - 18h00", "⌀"],
+		siteweb:'https://www.facebook.com/groups/943718017038941',
+		siteweb_nom:'page facebook',
+	}
 ];
 
