@@ -3,24 +3,27 @@
 document.getElementById("map").style.height = (window.innerHeight + "px");
 
 //LEAFLET CONFIGURATION - init
-var map = L.map('map').setView([47.68122,-2.20396], 13);
+//var map = L.map('map').setView([47.68122,-2.20396], 13);
+var map = L.map('map').setView([47.67348,-2.30558], 13);
 
-//LEAFLET CONFIGURATION - overlay + layers (OSM + GGL)
-var osm =           L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"),
-    googleSat =     L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}',	{maxZoom: 20, subdomains:['mt0','mt1','mt2','mt3']}),
-    googleTerrain = L.tileLayer('http://{s}.google.com/vt?lyrs=p&x={x}&y={y}&z={z}',	{maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3']}),
+//LEAFLET CONFIGURATION - overlay + layers (OpenStreetMap + google + IGN.fr)
+var osm =		   L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"),
+	ign = L.tileLayer("https://data.geopf.fr/wmts?&REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}",{minZoom : 0, maxZoom : 18, attribution : "IGN-F/Geoportail", tileSize : 256}),
+	googleSat =	 L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}',	{maxZoom: 20, subdomains:['mt0','mt1','mt2','mt3']}),
+	googleTerrain = L.tileLayer('http://{s}.google.com/vt?lyrs=p&x={x}&y={y}&z={z}',	{maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3']}),
 	googleHybrid =  L.tileLayer('http://{s}.google.com/vt?lyrs=s,h&x={x}&y={y}&z={z}',	{maxZoom: 20,subdomains:['mt0','mt1','mt2','mt3']});
 
 var baseMaps = {
-    "OpenStreetMap": osm,
-    "Google Satellite": googleSat,
-    "Google Satellite + noms": googleHybrid,
-    "Google Relief": googleTerrain
+	"OpenStreetMap": osm,
+	"IGN.fr Satellite":ign,
+	"Google Satellite": googleSat,
+	"Google Satellite + noms": googleHybrid,
+	"Google Relief": googleTerrain,
 };
 
 var overlays =  {//add any overlays here
 
-    };
+	};
 
 L.control.layers(baseMaps,overlays, {position: 'bottomleft'}).addTo(map);
 
@@ -33,19 +36,22 @@ flag.removeChild(flag.firstChild);
 
 
 var LeafIcon = L.Icon.extend({
-    options: {
-        shadowUrl: './img/pin-shadow.png',
-        iconSize:     [36, 62],
-        shadowSize:   [53, 34],
-        iconAnchor:   [17, 61],
-        shadowAnchor: [0, 32],
-        popupAnchor:  [0, -55]
-    }
+	options: {
+		shadowUrl: './img/pin-shadow.png',
+		iconSize:	 [36, 62],
+		shadowSize:   [53, 34],
+		iconAnchor:   [17, 61],
+		shadowAnchor: [0, 32],
+		popupAnchor:  [0, -55]
+	}
 });
-var pinIcon = new LeafIcon({iconUrl: './img/pin.png'})
+var pinIconW = new LeafIcon({iconUrl: './img/pinW.png'})
+var pinIconR = new LeafIcon({iconUrl: './img/pinR.png'})
+var pinIconG = new LeafIcon({iconUrl: './img/pinG.png'})
+var pinIconB = new LeafIcon({iconUrl: './img/pinB.png'})
 	
 L.icon = function (options) {
-    return new L.Icon(options);
+	return new L.Icon(options);
 };
 
 let dayofweek = ["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
@@ -75,14 +81,28 @@ for( let ressourcerie of adresses)
 		{
 			label += "📅⏰" + day + ": " + ressourcerie.horaire[i] + "<br />";
 		}
+		
+	let thisIcon = pinIconW;
+	switch (ressourcerie.couleur)
+	{
+		case "R":
+			thisIcon = pinIconR;
+			break;
+		case "G":
+			thisIcon = pinIconG;
+			break;
+		case "B":
+			thisIcon = pinIconB;
+			break;
+		default:
+			thisIcon = pinIconW;
+			break;
+	}
 
 	L.marker(
 		[ressourcerie.GPS[0],ressourcerie.GPS[1]],
-		{icon: pinIcon}).bindPopup(label, { maxWidth: 9999, maxHeight: 9999}).addTo(map);//*/
+		{icon: thisIcon}).bindPopup(label, { maxWidth: 9999, maxHeight: 9999}).addTo(map);
 }
-
-//var layerControl = L.control.layers(null, my_overlays).addTo(map);
-
 
 
 function showDivisionGeometryWithText(data, text, lineColor)

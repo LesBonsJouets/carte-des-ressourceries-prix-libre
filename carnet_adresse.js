@@ -45,6 +45,7 @@ let adresses = [
 		email:'lesbonsjouets56@gmail.com ',
 		siteweb:'		https://www.facebook.com/people/Association-Les-Bons-Jouets/100063671133700/',
 		siteweb_nom:'page facebook',
+		couleur:"R",
 	},
 	{
 		nom:'Les Meubles de l\'Asso',
@@ -55,6 +56,7 @@ let adresses = [
 		telephone:'+33667420969',
 		siteweb:'https://www.facebook.com/profile.php?id=61572315757572',
 		siteweb_nom:'page facebook',
+		couleur:"B",
 	},
 	{
 		nom:'Demain En Mains',
@@ -66,7 +68,19 @@ let adresses = [
 		email:'recycleriedem@gmail.com',
 		siteweb:'https://www.facebook.com/profile.php?id=61573835180170',
 		siteweb_nom:'page facebook',
+		couleur:"G",
 	},
+	{
+		nom:'Ressourcerie de Questembert',
+		GPS:[47.665899,-2.435341],
+		description_courte:'Objets du quotidien en seconde main',
+		adresse:"20, rue Charles Coulomb - 56230 Questembert",
+		horaire:["⌀","⌀","13h30 - 17h30","⌀","13h30 - 17h30 ","10h00 - 12h00 & 13h30 - 18h00", "⌀"],
+		telephone:'+33757083612',
+		siteweb:'https://ressourceriequestembert.fr',
+		siteweb_nom:'Site web Ressourcerie de Questembert',
+		couleur:"G",
+	},/*
 	{
 		nom:'La Tri-Dimension',
 		GPS:[47.713840, -2.215089],
@@ -75,6 +89,6 @@ let adresses = [
 		horaire:["⌀","⌀","14h00 - 18h00","⌀","12h00 - 18h00","9h30 - 12h30 & 14h00 - 18h00", "⌀"],
 		siteweb:'https://www.facebook.com/groups/943718017038941',
 		siteweb_nom:'page facebook',
-	}
+	}*/
 ];
 
