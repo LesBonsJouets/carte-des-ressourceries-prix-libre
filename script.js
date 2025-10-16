@@ -104,19 +104,3 @@ for( let ressourcerie of adresses)
 		{icon: thisIcon}).bindPopup(label, { maxWidth: 9999, maxHeight: 9999}).addTo(map);
 }
 
-
-function showDivisionGeometryWithText(data, text, lineColor)
-{
-	let divisionPolygon =  swapPairsOfArray(data.features[0].geometry.coordinates[0][0]);
-	let divisionName = text + ' : ' + data.features[0].properties.section + ' ' + data.features[0].properties.numero;
-	let boundingBox = L.polygon(divisionPolygon,{color: lineColor, fillColor: 'white', fillOpacity: 0.0}).addTo(map).bindPopup(divisionName);
-}
-
-//the API gives coordinates in a a/b format and leaflet requires a b/a format. IDK which one is wrong and it doesn't matter.
-function swapPairsOfArray(data)
-{
-	let result = [];
-	for(let pair of data)
-		result.push([pair[1],pair[0]]);
-	return result;
-}
